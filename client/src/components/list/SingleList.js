@@ -1,12 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import jwt_decode from "jwt-decode";
 import axios from 'axios';
 import { toast } from "react-toastify";
 import ListInput from './ListInput';
 import ListItem from './ListItem';
 import LoadingSpinner from '../spinner/LoadingSpinner';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useForm } from "react-hook-form";
 import { updateList, fetchSingleList, deleteList } from '../../store/actions/list-actions';
 
@@ -15,7 +14,7 @@ function SingleList({ list = [], listInfo = [], isLoading, getList, match }) {
 
     useEffect(() => {
         getList(id);
-    }, [id])
+    }, [getList, id])
 
     const shoppingList = list.map(function (item, i) {
         return i + 1 + " " + item.item + '\n';
@@ -28,7 +27,7 @@ function SingleList({ list = [], listInfo = [], isLoading, getList, match }) {
     const dispatch = useDispatch();
 
     const { register, handleSubmit, errors } = useForm({ mode: "onBlur" });
-
+    console.log(errors)
     //Submit text to be sent
     const onSubmit = () => {
         axios.post('/api', {
@@ -51,17 +50,6 @@ function SingleList({ list = [], listInfo = [], isLoading, getList, match }) {
         }
         return;
     }
-
-    const token = jwt_decode(localStorage.getItem('token'));
-    let user;
-    if (token) {
-        user = token;
-    }
-
-    const { displayName, uid } = user.user;
-
-    console.log(listInfo.title)
-    console.log(number)
 
     return (
         <div className="h-screen">
@@ -91,25 +79,28 @@ function SingleList({ list = [], listInfo = [], isLoading, getList, match }) {
                                 <button onClick={() => dispatch(updateList(list, title || listInfo.title, listInfo.id))} class="mx-2 mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
                                     Update
                   </button>
-                                <button onClick={onClick} class="mx-2 mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                                <button onClick={onClick} className="mx-2 mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
                                     Delete
                   </button>
 
-                                <button type="submit" class="mx-2 mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                                <button type="submit" className="mx-2 mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
                                     Text
                   </button>
                                 <input
-                                    required
                                     name="phone"
                                     ref={register({
                                         pattern: {
                                             value: /^\d{10}(?:\d{2})?$/,
                                             message: "Please enter a valid 10 digit phone number"
-                                        }
+                                        },
+                                        required: {
+                                            value: true,
+                                            message: "Number is required to send."
+                                        },
                                     })}
                                     onChange={(e) => getNumber(e.target.value)}
                                     value={number || ""}
-                                    class="md:w-1/3 shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Enter 10 Digit Number" />
+                                    className="md:w-1/3 shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Enter 10 Digit Number" />
                                 {errors.phone && (
                                     <p className="m-12 text-red-500 text-xs italic mt-2 ml-2">
                                         {errors.phone.message}

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { loginUser } from '../../store/actions/user-actions';
 import { connect } from 'react-redux';
@@ -14,16 +15,16 @@ const Login = ({ isLoadong, login, loginError }) => {
             {isLoadong ? <LoadingSpinner /> :
                 <div className="py-6 mt-12 h-screen">
                     <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
-                        <div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style={{ background: "url('https://images.unsplash.com/photo-1569360457068-0e24f0d88117?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=440&q=80')" }}></div>
+                        <div className="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style={{ background: "url('https://images.unsplash.com/photo-1569360457068-0e24f0d88117?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=440&q=80')" }}></div>
                         <div className="w-full p-8 lg:w-1/2">
                             <p className="text-xl text-gray-600 text-center">Welcome back!</p>
-                            <a href="#" className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
+                            <div className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
                                 <h1 className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">Sign in</h1>
-                            </a>
+                            </div>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="mt-4 flex items-center justify-between">
                                     <span className="border-b w-1/5 lg:w-1/4"></span>
-                                    <a href="#" className="text-xs text-center text-gray-500 uppercase">login with email</a>
+                                    <p className="text-xs text-center text-gray-500 uppercase">login with email</p>
                                     <span className="border-b w-1/5 lg:w-1/4"></span>
                                 </div>
                                 <div className="mt-4">
@@ -64,7 +65,7 @@ const Login = ({ isLoadong, login, loginError }) => {
                                 </div>
                                 <div className="mt-4 flex items-center justify-between">
                                     <span className="border-b w-1/5 md:w-1/4"></span>
-                                    <a href="#" className="text-xs text-gray-500 uppercase">or sign up</a>
+                                    <Link to="/login" className="text-xs text-gray-500 uppercase">or sign up</Link>
                                     <span className="border-b w-1/5 md:w-1/4"></span>
                                 </div>
                             </form>

@@ -37,7 +37,9 @@ h1 {
   font-size: 32px;
 }
 
-.todo-row {
+/* List row styles */
+
+.list-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,20 +49,7 @@ h1 {
   width: 100%;
 }
 
-.sent-msg {
-  opacity: 0;
-  animation: opacityOn 5s normal forwards step-end;
-  animation-delay: 0s;
-}
-
-@keyframes opacityOn {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+/* Navbar styles */
 
 @media (max-width: 767px) {
   .navicon {
@@ -101,6 +90,9 @@ h1 {
     top: 0;
   }
 }
+
+;
+/* End navbar styles */
 
 @keyframes App-logo-spin {
   from {

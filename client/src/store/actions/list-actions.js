@@ -1,9 +1,7 @@
-import { auth, db, storage } from '../../config/fbConfig';
+import { db, storage } from '../../config/fbConfig';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import moment from "moment";
-import { useSelector } from 'react-redux';
-
 
 //Add item to list 
 export const addItem = (item, listInfo) => {

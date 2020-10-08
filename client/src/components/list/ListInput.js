@@ -10,12 +10,12 @@ export default function ListInput() {
 
     return (
         <div>
-            <div class="mb-4">
-                <div class="flex mt-4">
+            <div className="mb-4">
+                <div className="flex mt-4">
                     <input
                         onChange={(e) => setItem(e.target.value)}
                         value={item}
-                        class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Add Todo" />
+                        className="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Add Todo" />
                     <button onClick={() => {
                         setItem('')
                         dispatch(addItem(
@@ -27,7 +27,7 @@ export default function ListInput() {
 
                         ))
 
-                    }} class="flex-no-shrink p-2 border-2 rounded text-white border-teal hover:text-white bg-blue-500 hover:bg-blue-700 font-bold  focus:outline-none">Add</button>
+                    }} className="flex-no-shrink p-2 border-2 rounded text-white border-teal hover:text-white bg-blue-500 hover:bg-blue-700 font-bold  focus:outline-none">Add</button>
                 </div>
             </div>
         </div>

@@ -57,7 +57,7 @@ export const deleteUser = (uid) => {
 
         const removeUser = db.collection("users").doc(`${uid}`).delete();
         removeUser.then(() => {
-            return db.collection("newsfeed").where("userId,", "==", uid).get();
+            return db.collection("grocery").where("userId,", "==", uid).get();
         })
             .then(data => {
                 data.forEach(doc => {
