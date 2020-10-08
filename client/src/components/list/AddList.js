@@ -29,7 +29,6 @@ function AddList() {
 
     const onSubmit = () => {
         axios.post('/api', {
-            firstName: 'Finn',
             list: shoppingList,
             number: number
         })
@@ -102,7 +101,7 @@ function AddList() {
                             })}
                             onChange={(e) => getNumber(e.target.value)}
                             value={number || ""}
-                            className="md:w-3/5 shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Enter 10 Digit Number" />
+                            className="mt-2 md:w-3/5 shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Enter 10 Digit Number" />
                         {errors.phone && (
                             <p className="m-12 text-red-500 text-xs italic mt-2 ml-2">
                                 {errors.phone.message}

@@ -30,9 +30,9 @@ export default function ListItem({ list, index }) {
                     value={itemEdit}
                     className="shadow appearance-none border py-2 px-3 mr-4 text-grey-darker" placeholder={list.item} /> : <p className="w-full text-gray-700 mr-32 font-bold">{`${index + 1}.`} {list.item}</p>}
 
-                <button onClick={toggleEdit} className="mx-2 bg-transparent px-4 border border-gray-400 text-gray-700 hover:bg-blue-500 hover:text-white font-bold py-2 px-4 rounded focus:outline-none" >{editable ? "Save" : "Edit"}</button>
+                <button onClick={toggleEdit} className="text-center mx-2 bg-transparent px-4 border border-gray-400 text-gray-700 hover:bg-blue-500 hover:text-white font-bold py-2 px-4 rounded focus:outline-none" >{editable ? <i class="fas fa-check"></i> : <i class="fas fa-edit"></i>}</button>
 
-                <button onClick={() => dispatch(deleteItem(list.id, listInfo))} className="mx-2 bg-transparent px-4 border border-gray-400 text-gray-700 hover:bg-red-600 hover:text-white font-bold py-2 px-4 rounded focus:outline-none">Remove</button>
+                <button onClick={() => dispatch(deleteItem(list.id, listInfo))} className="mx-2 bg-transparent px-4 border border-gray-400 text-gray-700 hover:bg-red-600 hover:text-white font-bold py-2 px-4 rounded focus:outline-none"><i class="fas fa-trash"></i></button>
             </div>
         </Fragment>
     )

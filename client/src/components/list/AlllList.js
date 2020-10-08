@@ -26,7 +26,7 @@ function AllLists({ lists = [], isLoading, getLists }) {
                         <h1 className="mt-2 text-gray-700">Your Grocery Lists.</h1>
                         <p className="text-gray-800 text-lg">Edit, delete, or text a list you have created any time!</p>
                     </div>
-                    <div className="p-20 flex flex-wrap">
+                    <div className="flex justify-between">
                         {lists.map((list, i) => {
                             return (
                                 <div key={i}>

@@ -27,7 +27,7 @@ export default function ListInput() {
 
                         ))
 
-                    }} className="flex-no-shrink p-2 border-2 rounded text-white border-teal hover:text-white bg-blue-500 hover:bg-blue-700 font-bold  focus:outline-none">Add</button>
+                    }} className="flex-no-shrink p-2 border-2 rounded text-xm text-white hover:text-white bg-blue-500 hover:bg-blue-700 font-bold  focus:outline-none"><i class="text-center fas fa-plus"></i></button>
                 </div>
             </div>
         </div>

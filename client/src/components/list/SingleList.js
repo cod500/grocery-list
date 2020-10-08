@@ -100,7 +100,7 @@ function SingleList({ list = [], listInfo = [], isLoading, getList, match }) {
                                     })}
                                     onChange={(e) => getNumber(e.target.value)}
                                     value={number || ""}
-                                    className="md:w-1/3 shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Enter 10 Digit Number" />
+                                    className="mt-2 md:w-1/3 shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Enter 10 Digit Number" />
                                 {errors.phone && (
                                     <p className="m-12 text-red-500 text-xs italic mt-2 ml-2">
                                         {errors.phone.message}
