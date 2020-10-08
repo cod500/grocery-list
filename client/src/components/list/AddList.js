@@ -54,7 +54,7 @@ function AddList() {
 
 
     return (
-        <div className="flex flex-col w-full h-screen flex bg-teal-lightest font-sans overflow-hidden bg-opacity-0">
+        <div className="flex flex-col w-full h-full lg:h-screen flex bg-teal-lightest font-sans overflow-hidden bg-opacity-0">
             <div className="text-center mt-12">
                 <h1 className="mt-2 text-gray-700">Create Grocery List.</h1>
                 {user ? (<p className="text-gray-800 text-lg">Edit, delete, or text a list you have created any time!</p>) : (

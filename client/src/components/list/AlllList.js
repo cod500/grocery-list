@@ -19,9 +19,9 @@ function AllLists({ lists = [], isLoading, getLists }) {
     }, [getLists, uid]);
 
     return (
-        <div className="h-screen">
+        <div className="">
             {isLoading ? (<LoadingSpinner />) : (
-                <div className="h-full">
+                <div className="h-full lg:h-screen ">
                     <div className="text-center mt-12">
                         <h1 className="mt-2 text-gray-700">Your Grocery Lists.</h1>
                         <p className="text-gray-800 text-lg">Edit, delete, or text a list you have created any time!</p>

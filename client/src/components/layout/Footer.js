@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
     return (
-        <div className="w-full text-center ">
+        <div className="w-full text-center mt-12">
             <section className="bg-gray-900 sm:py-32 py-16">
                 <div className="container mx-auto sm:flex-row flex-col flex ">
                     <div className="sm:w-1/3 w-full sm:mb-0 mb-16">

@@ -54,7 +54,7 @@ function SingleList({ list = [], listInfo = [], isLoading, getList, match }) {
     return (
         <div className="h-screen">
             {isLoading ? <LoadingSpinner /> : (
-                <div class="h-screen w-full flex justify-center font-sans">
+                <div class="h-full lg:h-screen  w-full flex justify-center font-sans">
                     <div class="rounded p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
                         <div className="text-center mb-4">
                             <h1 className="mt-2 text-gray-700">{listInfo.title}</h1>
